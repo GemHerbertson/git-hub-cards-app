@@ -1,16 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-
-import './App.css';
-
 const axios = require('axios').default;
-
-
-// const testData = [
-//   {name: "mojombo", avatar_url: "https://avatars0.githubusercontent.com/u/1?v=4", company: "Facebook"},
-//   {name: "defunkt", avatar_url: "https://avatars0.githubusercontent.com/u/2?v=4", company: "GitHub"},
-//   {name: "pjhyett", avatar_url: "https://avatars0.githubusercontent.com/u/3?v=4", company: "Instagram"}
-// ];
+import './App.css';
 
 const CardList = (props) => (
   <div>
@@ -34,11 +25,6 @@ class Card extends Component {
 };
 
 class Form extends Component {
-  // userNameInput = React.createRef();  // using refs to grab data
-  // handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   console.log(this.userNameInput.current.value);
-  // };
   state = {userName:""}
   handleSubmit = async (event) => {
     event.preventDefault();
@@ -56,13 +42,7 @@ class Form extends Component {
   }
 }
 class App extends Component {
-  // constructor(props){
-  //   super(props);
-  //   this.state = {
-  //     profiles: testData,
-  //   };
-  // }
-  state = {                // simplified version of the above
+  state = {                
     profiles: [],   
   };
   addNewProfile = (profileData) => {
@@ -85,4 +65,3 @@ ReactDOM.render(
   <App title="The GitHub Cards App" />, 
   document.getElementById('root')
 );
-
